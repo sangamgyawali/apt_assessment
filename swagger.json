@@ -1,0 +1,61 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "apt assessment",
+      "version": "1.0.0"
+    },
+    "basePath": "/",
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+      "/ping": {
+        "post": {
+          "summary": "Ping endpoint",
+          "description": "Returns an object with the specified parameters.",
+          "parameters": [
+            {
+              "name": "message",
+              "in": "body",
+              "required": true,
+              "description": "The message to echo.",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response.",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "echo": {
+                    "type": "object"
+                  },
+                  "timestamp": {
+                    "type": "number"
+                  },
+                  "env": {
+                    "type": "string"
+                  },
+                  "version": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal server error."
+            }
+          }
+        }
+      }
+    }
+  }
+  
